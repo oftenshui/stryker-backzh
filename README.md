@@ -35,6 +35,5 @@ If you want to use the original English version but are unable to download and i
 - ![Snipaste_2026-02-22_10-07-30](https://github.com/oftenshui/stryker-backzh/blob/main/docs/zh-CN/20260222-100730.png)
 
 ## Star History
-## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=oftenshui/stryker-backzh&type=date&logscale&legend=top-left)](https://www.star-history.com/#oftenshui/stryker-backzh&type=date&logscale&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=oftenshui/stryker-backzh&type=date&legend=top-left)](https://www.star-history.com/#oftenshui/stryker-backzh&type=date&legend=top-left)
