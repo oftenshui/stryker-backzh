@@ -16,9 +16,11 @@ However, we've fixed the installation issue here. Now you only need to download 
 如果您想使用英文原版，但是却无法下载安装必要文件！您可以先安装我们的汉化版，等待安装好必要文件以后，卸载中文版、安装英文版，即可达到您的目的！
 If you want to use the original English version but are unable to download and install the necessary files, you can first install our Chinese version. After the necessary files are installed, uninstall the Chinese version and install the English version to achieve your goal.
 
-- 当Stryker更新的时候，这个仓库可能不会更新
-- This repository may not update when Stryker updates.
-- 
+- ~~- 当Stryker更新的时候，这个仓库可能不会更新~~
+- ~~- This repository may not update when Stryker updates.~~
+- 截至20260427全部版本以汉化、修复完毕。可能后续不会更新，如有汉化不到位或者其他问题请issues！
+- As of April 27, 2026, all versions have been fully localized and debugged. Future updates are unlikely; however, should you encounter any localization errors or other issues, please report them via the Issues section.
+  
 ## 下载和安装
 ## Download and install
 - 当前仓库的Release
