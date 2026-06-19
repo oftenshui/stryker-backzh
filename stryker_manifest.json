@@ -1,0 +1,43 @@
+{
+  "manifest_version": 1,
+  "core": {
+    "version": "chroot-main",
+    "chroot64": {
+      "url": "https://github.com/zalexdev/strykerapp/releases/download/chroot-main/chroot64.tar.gz",
+      "sha256": "2ad21f1445102913c52099bcb86ab380f9520c9e4d7771e6a951f634451068ac",
+      "size": 58918734
+    },
+    "chroot32": {
+      "url": "https://github.com/zalexdev/strykerapp/releases/download/chroot-main/chroot32.tar.gz",
+      "sha256": "faa4b256819818360945d8fecc8f05f0f158a76e6a61feb8eff66308c32b3341",
+      "size": 140633600
+    }
+  },
+  "app": {
+    "versionCode": 450,
+    "versionName": "4.5R",
+    "url": "https://github.com/zalexdev/strykerapp/releases/download/v4.5R/StrykerOSS-4.5R.apk",
+    "sha256": "",
+    "size": 0,
+    "mandatory": false,
+    "changelog": ""
+  },
+  "news": [
+    {
+      "id": 1,
+      "title": "StrykerOSS is open source",
+      "description": "Released as free and open-source software. Visit the GitHub repository for source, issues and contributions.",
+      "newsDate": "2026-06-14",
+      "newsUrl": "https://github.com/zalexdev/strykerapp",
+      "imageUrl": "",
+      "pinned": true,
+      "actionbutton1": true,
+      "actionbutton1text": "Open GitHub",
+      "actionbutton1url": "https://github.com/zalexdev/strykerapp",
+      "actionbutton2": false,
+      "actionbutton2text": "",
+      "actionbutton2url": ""
+    }
+  ],
+  "notifications": []
+}

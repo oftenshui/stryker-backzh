@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ota_channel_name">更新与新闻</string>
+    <string name="ota_update_available_title">有可用更新</string>
+    <string name="ota_update_available_body">版本 %1$s 可用。点击以更新。</string>
+    <string name="ota_dialog_title">有可用更新</string>
+    <string name="ota_dialog_body">Stryker %1$s 可用。</string>
+    <string name="ota_dialog_update">更新</string>
+    <string name="ota_dialog_later">稍后</string>
+    <string name="ota_dialog_skip">跳过此版本</string>
+    <string name="ota_downloading">正在下载更新…</string>
+    <string name="ota_download_failed">更新下载失败</string>
+    <string name="ota_enable_unknown_sources">允许从 Stryker 安装应用以继续更新</string>
+</resources>

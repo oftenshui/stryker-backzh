@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+######### ALPINE EXEC #########
+SELF_PATH=$(readlink -f $0)
+. ${SELF_PATH%/*}/bootroot_env
+$BUSYBOX chroot $MNT /bin/ash -l&&exit

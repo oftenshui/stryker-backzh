@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+    android:id="@+id/toggle_tab_switcher_menu_item"
+    android:title="@string/toggle_tab_switcher_menu_item"
+    app:actionLayout="@layout/tab_switcher_menu_item"
+    app:showAsAction="ifRoom"/>
+
+  <item
+    android:id="@+id/menu_item_new_session"
+
+    android:title="@string/new_session"
+    app:showAsAction="never"/>
+  <item
+    android:id="@+id/menu_item_new_root_session"
+    android:title="@string/new_root_session"
+    app:showAsAction="never"/>
+  <item
+    android:title="@string/tools"
+    app:showAsAction="never">
+    <menu>
+      <item
+        android:id="@+id/get_interfaces"
+        android:title="@string/get_interfaces"
+        app:showAsAction="never"/>
+      <item
+        android:id="@+id/get_usb_devices"
+        android:title="@string/get_usb_devices"
+        app:showAsAction="never"/>
+    </menu>
+  </item>
+  <item
+    android:id="@+id/menu_item_settings"
+    android:title="@string/settings"
+    app:showAsAction="never"/>
+
+</menu>

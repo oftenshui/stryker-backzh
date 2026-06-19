@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/light_contrast"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/light_lite_contrast"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="0dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/routerscan_prog"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/rectangle"
+            app:tint="@color/yellow" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/router_ip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="monospace"
+                    android:singleLine="true"
+                    android:text="0.0.0.0:80"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/router_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/settings_value_chip_bg"
+                    android:fontFamily="monospace"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="@string/wifi_model_placeholder"
+                    android:textColor="@color/grey"
+                    android:textIsSelectable="true"
+                    android:textSize="10sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/router_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/initializing"
+                android:textColor="@color/grey"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/router_ssid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/wifi"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center_vertical"
+                    android:text="@string/local_ssid_label"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textIsSelectable="true"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:drawableTint="@color/stryker_accent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/router_mac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:drawableStart="@drawable/password"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center_vertical"
+                    android:text="@string/local_device_mac_label"
+                    android:textColor="@color/grey"
+                    android:textIsSelectable="true"
+                    android:textSize="11sp"
+                    android:visibility="gone"
+                    app:drawableTint="@color/grey" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/router_auth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:drawableStart="@drawable/shield"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center_vertical"
+                    android:text="@string/webauth"
+                    android:textColor="@color/grey"
+                    android:textIsSelectable="true"
+                    android:textSize="11sp"
+                    android:visibility="gone"
+                    app:drawableTint="@color/grey" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/router_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:drawableStart="@drawable/key"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center_vertical"
+                    android:text="@string/pass"
+                    android:textColor="@color/green"
+                    android:textIsSelectable="true"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:drawableTint="@color/green" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

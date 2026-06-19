@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="settings_screen_bg">#121417</color>
+    <color name="settings_card_bg">#1B1E24</color>
+    <color name="settings_stroke">#2C313A</color>
+    <color name="settings_accent">#6FA8FF</color>
+    <color name="settings_grey">#9BA1AC</color>
+    <color name="settings_danger">#FF6B6B</color>
+    <color name="settings_section_prefs">#6FA8FF</color>
+    <color name="settings_section_maint">#B79DFF</color>
+    <color name="settings_section_about">#C9B3FF</color>
+</resources>

@@ -1,0 +1,12 @@
+REM Educational demo for macOS. Opens Spotlight (Cmd+Space), types
+REM "terminal", launches it and prints a hello line.
+
+DEFAULTDELAY 80
+
+GUI SPACE
+DELAY 500
+STRING terminal
+DELAY 400
+ENTER
+DELAY 1500
+STRINGLN echo "Hello from StrykerOSS over USB HID"

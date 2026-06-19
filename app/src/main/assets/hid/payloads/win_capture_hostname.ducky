@@ -1,0 +1,34 @@
+REM ============================================================
+REM  Back-channel showcase — host output returns to Stryker.
+REM ============================================================
+REM
+REM  Companion to start_display_feed.ducky. That one streams the
+REM  host's screen TO the phone; this one streams a host command's
+REM  TEXT output back to the phone over the same CDC ACM bridge.
+REM
+REM  How it works:
+REM    1. Open a PowerShell window on the host.
+REM    2. WINHI <timeout_ms> <pipeline>
+REM       The pipeline is wrapped in & { ... } | Out-String, run
+REM       on the host, flattened to one line, and sent back over
+REM       /dev/ttyGS0. Stryker prints the captured value inline in
+REM       the IDE (line N · captured: …) and pops a MaterialAlert.
+REM
+REM  Try it: change the pipeline below to any of the examples,
+REM  re-run, and watch the value appear in this editor.
+REM    WINHI 5000 hostname
+REM    WINHI 5000 Get-Date
+REM    WINHI 8000 ipconfig | Select-String IPv4
+REM
+REM  Requirements: USB Arsenal profile "HID-to-Go" or
+REM  "Back-Channel Bridge" (auto-applied by Run).
+
+DEFAULTDELAY 60
+
+GUI r
+DELAY 700
+STRING powershell -NoExit
+ENTER
+DELAY 1500
+
+WINHI 8000 Get-CimInstance Win32_OperatingSystem | Select Caption,Version,BuildNumber

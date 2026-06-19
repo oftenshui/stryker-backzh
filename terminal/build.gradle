@@ -1,0 +1,99 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+  namespace 'com.stryker.terminal'
+  compileSdk 33
+
+  packaging {
+    resources {
+      excludes += '/META-INF/{AL2.0,LGPL2.1}'
+      excludes += 'META-INF/*'
+    }
+  }
+
+  defaultConfig {
+    minSdk 24
+    targetSdk 28
+    testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    externalNativeBuild {
+      cmake {
+        cppFlags "-std=c++11"
+        abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
+      }
+    }
+    sourceSets {
+      main {
+        jniLibs.srcDirs = ['src/main/jniLibs']
+      }
+    }
+    vectorDrawables {
+      useSupportLibrary true
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      shrinkResources false
+    }
+    debug {
+      minifyEnabled false
+      shrinkResources false
+    }
+  }
+
+  externalNativeBuild {
+    cmake {
+      path "CMakeLists.txt"
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  kotlinOptions {
+    freeCompilerArgs = ["-Xallow-result-return-type"]
+    jvmTarget = '1.8'
+  }
+
+  buildFeatures {
+    buildConfig = true
+  }
+
+  lint {
+    abortOnError false
+    checkReleaseBuilds false
+  }
+}
+
+dependencies {
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+  implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+  implementation 'org.greenrobot:eventbus:3.0.0'
+  implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.16'
+  implementation 'com.github.GrenderG:Color-O-Matic:1.1.5'
+  implementation 'com.google.android.material:material:1.9.0'
+  implementation 'androidx.recyclerview:recyclerview:1.3.0'
+  implementation 'androidx.annotation:annotation:1.2.0'
+  implementation 'androidx.cardview:cardview:1.0.0'
+  implementation 'androidx.appcompat:appcompat:1.6.1'
+  implementation 'androidx.appcompat:appcompat-resources:1.6.1'
+  implementation 'androidx.preference:preference:1.1.0'
+  implementation 'com.airbnb.android:lottie:6.0.0'
+
+  implementation 'me.zhanghai.android.retrofile:library:1.1.1'
+
+  implementation "com.github.topjohnwu.libsu:core:5.0.4"
+
+  implementation project(':chrome-tabs')
+  implementation project(':NeoLang')
+  implementation project(':NeoTermBridge')
+  implementation project(':Xorg')
+
+  testImplementation 'junit:junit:4.13.2'
+}

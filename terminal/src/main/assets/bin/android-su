@@ -1,0 +1,26 @@
+#!/system/bin/sh
+# Version: 2.0.0
+#
+# Root Android shell (NON-chroot) using the bundled static bash.
+
+STRYKER_FILES=/data/data/com.zalexdev.stryker/files
+
+# Android-side PATH (include common su manager locations).
+export PATH=$STRYKER_FILES/usr/bin:$STRYKER_FILES/usr/sbin:/sbin:/system/bin:/system/xbin:/system/sbin:/su/bin:/magisk/.core/bin:/debug_ramdisk:/apex/com.android.runtime/bin:/apex/com.android.art/bin:/odm/bin:/vendor/bin:.
+# Drop loader env so stock Android binaries run cleanly.
+unset LD_LIBRARY_PATH
+unset LD_PRELOAD
+export PS1="\\[\\e[1;32m\\]\\u [ \\[\\e[0m\\]\\w\\[\\e[1;32m\\] ]\$ \\[\\e[0m\\]"
+
+clear
+
+# Locate a working su without depending on 'which'.
+SU=
+for c in su /system/bin/su /system/xbin/su /sbin/su /debug_ramdisk/su /su/bin/su /sbin/bin/su; do
+    if command -v "$c" >/dev/null 2>&1; then SU="$c"; break; fi
+    if [ -x "$c" ]; then SU="$c"; break; fi
+done
+[ -z "$SU" ] && SU=su
+
+# Root shell using the bundled static bash; -mm keeps the global mount namespace.
+exec "$SU" -mm -s "$STRYKER_FILES/usr/bin/bash"

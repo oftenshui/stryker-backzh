@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#111111</color>
+  <color name="colorPrimaryDark">#0B1E4E</color>
+  <color name="colorAccent">#365EC5</color>
+  <color name="terminal_background">#ff14181c</color>
+  <color name="textColor">#fefefe</color>
+  <color name="textColorSecondary">#ced7db</color>
+
+  <color name="popup_background">#AE000000</color>
+  <color name="popup_split_background">#efefef</color>
+  <color name="list_download_item_color_dark">#363636</color>
+
+  <color name="tab_switcher_background_color">#202124</color>
+  <color name="tab_background_color">#131415</color>
+  <color name="tab_title_text_color">#A8D8D8D8</color>
+
+  <color name="button_color">#A88B9FBA</color>
+
+  <color name="settings_screen_bg">#FFFFFF</color>
+  <color name="settings_card_bg">#FFFFFF</color>
+  <color name="settings_stroke">#EDECEC</color>
+  <color name="settings_accent">#1565C0</color>
+  <color name="settings_grey">#757575</color>
+  <color name="settings_danger">#C62828</color>
+  <color name="settings_section_prefs">#1565C0</color>
+  <color name="settings_section_maint">#5E35B1</color>
+  <color name="settings_section_about">#7E57C2</color>
+
+  <color name="term_dialog_row_bg">#23272E</color>
+  <color name="term_dialog_row_stroke">#31363F</color>
+  <color name="term_dialog_icon_bg">#2C313A</color>
+  <color name="term_dialog_muted">#9BA1AC</color>
+  <color name="term_accent_bright">#6FA8FF</color>
+  <color name="term_chip_monitor_text">#66BB6A</color>
+  <color name="term_chip_managed_text">#6FA8FF</color>
+</resources>

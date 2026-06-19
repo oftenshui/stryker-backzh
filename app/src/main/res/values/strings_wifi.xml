@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wifi_monitor_failed">Couldn\'t enable monitor mode on %1$s.\n\nWhy this happens:\n• The adapter or its chipset doesn\'t support monitor mode (most built-in non-Qualcomm Wi-Fi chips don\'t).\n• The adapter isn\'t detected or was unplugged.\n• The interface is busy or down, or the driver exposes it under a different name.\n\nHow to fix:\n• Settings → Network interfaces: pick a different adapter for handshake/deauth.\n• Re-plug your external USB Wi-Fi adapter, then rescan.\n• Use a monitor-capable adapter (e.g. Atheros AR9271, Realtek RTL8812AU / 88XXAU).\n• Settings → Custom monitor commands: adjust how monitor mode is enabled for your adapter.\n• Make sure Android Wi-Fi / hotspot isn\'t holding the interface — toggle it off and try again.</string>
+</resources>

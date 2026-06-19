@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="promo_github_title">Enjoying Stryker?</string>
+    <string name="promo_github_message">Stryker is free and open source. If it\'s useful to you, a star on GitHub helps the project grow and reach more people.</string>
+    <string name="promo_github_action">Star on GitHub</string>
+    <string name="promo_blog_title">Stay in the loop</string>
+    <string name="promo_blog_message">New tools, write-ups and release notes land on the blog first. Take a look at what\'s coming next.</string>
+    <string name="promo_blog_action">Visit the blog</string>
+    <string name="promo_later">Maybe later</string>
+</resources>

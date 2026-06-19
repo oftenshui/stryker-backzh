@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/k_esc"  style="@style/HidKey" android:tag="hk:0x29" android:text="Esc" />
+        <Button android:id="@+id/k_f1"   style="@style/HidKey" android:tag="hk:0x3A" android:text="F1" />
+        <Button android:id="@+id/k_f2"   style="@style/HidKey" android:tag="hk:0x3B" android:text="F2" />
+        <Button android:id="@+id/k_f3"   style="@style/HidKey" android:tag="hk:0x3C" android:text="F3" />
+        <Button android:id="@+id/k_f4"   style="@style/HidKey" android:tag="hk:0x3D" android:text="F4" />
+        <Button android:id="@+id/k_f5"   style="@style/HidKey" android:tag="hk:0x3E" android:text="F5" />
+        <Button android:id="@+id/k_f6"   style="@style/HidKey" android:tag="hk:0x3F" android:text="F6" />
+        <Button android:id="@+id/k_f7"   style="@style/HidKey" android:tag="hk:0x40" android:text="F7" />
+        <Button android:id="@+id/k_f8"   style="@style/HidKey" android:tag="hk:0x41" android:text="F8" />
+        <Button android:id="@+id/k_f9"   style="@style/HidKey" android:tag="hk:0x42" android:text="F9" />
+        <Button android:id="@+id/k_f10"  style="@style/HidKey" android:tag="hk:0x43" android:text="F10" />
+        <Button android:id="@+id/k_f11"  style="@style/HidKey" android:tag="hk:0x44" android:text="F11" />
+        <Button android:id="@+id/k_f12"  style="@style/HidKey" android:tag="hk:0x45" android:text="F12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/k_1" style="@style/HidKey" android:tag="hk:0x1E" android:text="1" />
+        <Button android:id="@+id/k_2" style="@style/HidKey" android:tag="hk:0x1F" android:text="2" />
+        <Button android:id="@+id/k_3" style="@style/HidKey" android:tag="hk:0x20" android:text="3" />
+        <Button android:id="@+id/k_4" style="@style/HidKey" android:tag="hk:0x21" android:text="4" />
+        <Button android:id="@+id/k_5" style="@style/HidKey" android:tag="hk:0x22" android:text="5" />
+        <Button android:id="@+id/k_6" style="@style/HidKey" android:tag="hk:0x23" android:text="6" />
+        <Button android:id="@+id/k_7" style="@style/HidKey" android:tag="hk:0x24" android:text="7" />
+        <Button android:id="@+id/k_8" style="@style/HidKey" android:tag="hk:0x25" android:text="8" />
+        <Button android:id="@+id/k_9" style="@style/HidKey" android:tag="hk:0x26" android:text="9" />
+        <Button android:id="@+id/k_0" style="@style/HidKey" android:tag="hk:0x27" android:text="0" />
+        <Button android:id="@+id/k_minus" style="@style/HidKey" android:tag="hk:0x2D" android:text="-" />
+        <Button android:id="@+id/k_eq"    style="@style/HidKey" android:tag="hk:0x2E" android:text="=" />
+        <Button android:id="@+id/k_bksp"  style="@style/HidKeyWide" android:tag="hk:0x2A" android:text="⌫" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/k_tab"   style="@style/HidKeyWide" android:tag="hk:0x2B" android:text="Tab" />
+        <Button android:id="@+id/k_q" style="@style/HidKey" android:tag="hk:0x14" android:text="q" />
+        <Button android:id="@+id/k_w" style="@style/HidKey" android:tag="hk:0x1A" android:text="w" />
+        <Button android:id="@+id/k_e" style="@style/HidKey" android:tag="hk:0x08" android:text="e" />
+        <Button android:id="@+id/k_r" style="@style/HidKey" android:tag="hk:0x15" android:text="r" />
+        <Button android:id="@+id/k_t" style="@style/HidKey" android:tag="hk:0x17" android:text="t" />
+        <Button android:id="@+id/k_y" style="@style/HidKey" android:tag="hk:0x1C" android:text="y" />
+        <Button android:id="@+id/k_u" style="@style/HidKey" android:tag="hk:0x18" android:text="u" />
+        <Button android:id="@+id/k_i" style="@style/HidKey" android:tag="hk:0x0C" android:text="i" />
+        <Button android:id="@+id/k_o" style="@style/HidKey" android:tag="hk:0x12" android:text="o" />
+        <Button android:id="@+id/k_p" style="@style/HidKey" android:tag="hk:0x13" android:text="p" />
+        <Button android:id="@+id/k_lbr" style="@style/HidKey" android:tag="hk:0x2F" android:text="[" />
+        <Button android:id="@+id/k_rbr" style="@style/HidKey" android:tag="hk:0x30" android:text="]" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/k_caps" style="@style/HidKeyWide" android:tag="hk:0x39" android:text="Caps" />
+        <Button android:id="@+id/k_a" style="@style/HidKey" android:tag="hk:0x04" android:text="a" />
+        <Button android:id="@+id/k_s" style="@style/HidKey" android:tag="hk:0x16" android:text="s" />
+        <Button android:id="@+id/k_d" style="@style/HidKey" android:tag="hk:0x07" android:text="d" />
+        <Button android:id="@+id/k_f" style="@style/HidKey" android:tag="hk:0x09" android:text="f" />
+        <Button android:id="@+id/k_g" style="@style/HidKey" android:tag="hk:0x0A" android:text="g" />
+        <Button android:id="@+id/k_h" style="@style/HidKey" android:tag="hk:0x0B" android:text="h" />
+        <Button android:id="@+id/k_j" style="@style/HidKey" android:tag="hk:0x0D" android:text="j" />
+        <Button android:id="@+id/k_k" style="@style/HidKey" android:tag="hk:0x0E" android:text="k" />
+        <Button android:id="@+id/k_l" style="@style/HidKey" android:tag="hk:0x0F" android:text="l" />
+        <Button android:id="@+id/k_sc"  style="@style/HidKey" android:tag="hk:0x33" android:text=";" />
+        <Button android:id="@+id/k_apo" style="@style/HidKey" android:tag="hk:0x34" android:text="'" />
+        <Button android:id="@+id/k_enter" style="@style/HidKeyWide" android:tag="hk:0x28" android:text="↵" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/k_shift" style="@style/HidMod" android:tag="mod:0x02" android:text="⇧" />
+        <Button android:id="@+id/k_z" style="@style/HidKey" android:tag="hk:0x1D" android:text="z" />
+        <Button android:id="@+id/k_x" style="@style/HidKey" android:tag="hk:0x1B" android:text="x" />
+        <Button android:id="@+id/k_c" style="@style/HidKey" android:tag="hk:0x06" android:text="c" />
+        <Button android:id="@+id/k_v" style="@style/HidKey" android:tag="hk:0x19" android:text="v" />
+        <Button android:id="@+id/k_b" style="@style/HidKey" android:tag="hk:0x05" android:text="b" />
+        <Button android:id="@+id/k_n" style="@style/HidKey" android:tag="hk:0x11" android:text="n" />
+        <Button android:id="@+id/k_m" style="@style/HidKey" android:tag="hk:0x10" android:text="m" />
+        <Button android:id="@+id/k_comma" style="@style/HidKey" android:tag="hk:0x36" android:text="," />
+        <Button android:id="@+id/k_dot"   style="@style/HidKey" android:tag="hk:0x37" android:text="." />
+        <Button android:id="@+id/k_slash" style="@style/HidKey" android:tag="hk:0x38" android:text="/" />
+        <Button android:id="@+id/k_up"    style="@style/HidKey" android:tag="hk:0x52" android:text="↑" />
+        <Button android:id="@+id/k_del"   style="@style/HidKey" android:tag="hk:0x4C" android:text="Del" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/k_ctrl" style="@style/HidMod" android:tag="mod:0x01" android:text="Ctrl" />
+        <Button android:id="@+id/k_gui"  style="@style/HidMod" android:tag="mod:0x08" android:text="Win" />
+        <Button android:id="@+id/k_alt"  style="@style/HidMod" android:tag="mod:0x04" android:text="Alt" />
+        <Button android:id="@+id/k_space" style="@style/HidKeySpace" android:tag="hk:0x2C" android:text="space" />
+        <Button android:id="@+id/k_altr" style="@style/HidMod" android:tag="mod:0x40" android:text="AltGr" />
+        <Button android:id="@+id/k_left" style="@style/HidKey" android:tag="hk:0x50" android:text="←" />
+        <Button android:id="@+id/k_down" style="@style/HidKey" android:tag="hk:0x51" android:text="↓" />
+        <Button android:id="@+id/k_right" style="@style/HidKey" android:tag="hk:0x4F" android:text="→" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+  <com.stryker.terminal.frontend.session.view.extrakey.ExtraKeysView
+    android:id="@+id/extra_keys"
+    android:theme="@style/Theme.AppCompat"
+    style="?android:buttonBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:backgroundTint="@color/colorPrimary"
+    android:orientation="horizontal"/>
+
+  <com.stryker.terminal.frontend.session.view.TerminalView
+    android:id="@+id/terminal_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/extra_keys"
+    android:background="@color/terminal_background"
+    android:fadeScrollbars="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:scrollbars="vertical"/>
+
+</RelativeLayout>

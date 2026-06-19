@@ -1,0 +1,7 @@
+REM Minimal single-key demo: shows how one HID keystroke can trigger
+REM an OS shortcut. GUI+L locks Windows; macOS users can swap this
+REM line for CTRL CMD q. Only run on your own machine.
+
+DEFAULTDELAY 50
+
+GUI l

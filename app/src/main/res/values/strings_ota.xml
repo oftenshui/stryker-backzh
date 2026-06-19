@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ota_channel_name">Updates &amp; news</string>
+    <string name="ota_update_available_title">Update available</string>
+    <string name="ota_update_available_body">Version %1$s is available. Tap to update.</string>
+    <string name="ota_dialog_title">Update available</string>
+    <string name="ota_dialog_body">Stryker %1$s is available.</string>
+    <string name="ota_dialog_update">Update</string>
+    <string name="ota_dialog_later">Later</string>
+    <string name="ota_dialog_skip">Skip this version</string>
+    <string name="ota_downloading">Downloading update…</string>
+    <string name="ota_download_failed">Update download failed</string>
+    <string name="ota_enable_unknown_sources">Allow installing apps from Stryker to continue the update</string>
+</resources>

@@ -1,0 +1,36 @@
+#!/system/bin/sh
+### Bootroot environment. stryker
+
+unset LD_PRELOAD
+
+## Define the owner app package name.
+APP_PGK_NAME=com.zalexdev.stryker
+
+## Define chroot sudo path
+CHROOT_EXEC=/usr/bin/sudo
+
+## Combine android $PATH to chroot $PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
+
+## Define busybox path.
+BUSYBOX=/data/data/$APP_PGK_NAME/files/busybox
+
+## Define stryker binaries.
+chmod 777 /data/data/$APP_PGK_NAME/files/busybox
+chmod 777 /data/data/$APP_PGK_NAME/files/chroot_exec
+chmod 777 /data/data/$APP_PGK_NAME/files/boot_bash
+
+## Define chroot path to MNT variable.
+MNT="/data/local/stryker/release/"
+
+## Validate busybox path.
+if [ -z "$BUSYBOX" ]; then
+    echo "[-] No busybox found."
+    exit 1
+fi
+
+## Validate Chroot path.
+if [ ! -d "$MNT" ]; then
+    echo "[-] \"$MNT\" directory does not exist!"
+    exit 2
+fi

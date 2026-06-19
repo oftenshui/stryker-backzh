@@ -1,0 +1,125 @@
+#!/system/bin/sh
+
+function show_usage() {
+    echo "Stryker MAC changer for internal wlan interface."
+    echo ""
+    echo "[!] Usage: sh $0 [interface_name] [MAC_address](must be in XX:XX:XX:XX:XX:XX format)"
+}
+
+IFACE=$1
+MACADDRESS=$2
+
+if [ -z "$IFACE" -o -z "$MACADDRESS" ]; then
+    show_usage
+    exit 1
+fi
+
+if [ -z $(echo "$MACADDRESS" | grep -E "(([0-9A-f]{2}:){5}[0-9A-f]{2})") ]; then
+    show_usage
+    echo ""
+    echo "[-] MAC address format error."
+    exit 1
+fi
+
+echo "[!] Changing MAC address for $IFACE now..."
+
+ANDROID_VER=$(getprop ro.build.version.release)
+if [ ${ANDROID_VER//\.*} -gt 11 ]; then
+    echo "[!] Your device is running Android version > 11, using network wait method (to check success)."
+    svc wifi disable
+    echo "[!] Wait about 5 seconds before soft shutdown on $IFACE"
+    sleep 5
+    ip link set dev "$IFACE" down
+    CURRENT_TIME=$(date +%s)
+    while true; do
+        if ip link set dev "$IFACE" address "$MACADDRESS" 2>/dev/null; then
+            echo "[!] MAC address changed, but need to connect to network..."
+            ip link set "$IFACE" up
+            svc wifi enable
+            exit 0
+        else
+            if [ $(($(date +%s) - $CURRENT_TIME)) -lt 10 ]; then
+                continue
+            else
+                echo "[-] Failed to change MAC address on interface $IFACE"
+                ip link set "$IFACE" up
+                svc wifi enable
+                exit 1
+            fi
+        fi
+    done
+elif [ ${ANDROID_VER//\.*} -eq 11 ]; then
+    echo "[!] Your device is running Android version 11, using soft change method."
+    svc wifi disable
+    echo "[!] Wait about 5 seconds before soft shutdown on $IFACE"
+    sleep 5
+    ip link set dev "$IFACE" down
+    CURRENT_TIME=$(date +%s)
+    while true; do
+        if ip link set dev "$IFACE" address "$MACADDRESS" 2>/dev/null; then
+            echo "[+] MAC address on interface $IFACE successfully changed to: $MACADDRESS"
+            ip link set "$IFACE" up
+            svc wifi enable
+            exit 0
+        else
+            if [ $(($(date +%s) - $CURRENT_TIME)) -lt 10 ]; then
+                continue
+            else
+                echo "[-] Failed to change MAC address on interface $IFACE"
+                ip link set "$IFACE" up
+                svc wifi enable
+                exit 1
+            fi
+        fi
+    done
+elif [ ${ANDROID_VER//\.*} -eq 10 ]; then
+    echo "[!] Your device is running Android version 10, using soft change method."
+    svc wifi disable
+    svc wifi enable
+    echo "[!] Wait about 5 seconds before soft shutdown on $IFACE"
+    sleep 5
+    ip link set dev "$IFACE" down
+    CURRENT_TIME=$(date +%s)
+    while true; do
+        if ip link set dev "$IFACE" address "$MACADDRESS" 2>/dev/null; then
+            echo "[+] MAC address on interface $IFACE successfully changed to: $MACADDRESS"
+            ip link set "$IFACE" up
+            svc wifi enable
+            exit 0
+        else
+            if [ $(($(date +%s) - $CURRENT_TIME)) -lt 10 ]; then
+                continue
+            else
+                echo "[-] Failed to change MAC address on interface $IFACE"
+                ip link set "$IFACE" up
+                svc wifi enable
+                exit 1
+            fi
+        fi
+    done
+else
+    echo "[!] Your device is running Android version < 10, using hard change method."
+    settings put global airplane_mode_on 1
+    am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true
+    sleep 5
+    settings put global airplane_mode_on 0
+    am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false
+    CURRENT_TIME=$(date +%s)
+    while true; do
+        if ip link set dev "$IFACE" address "$MACADDRESS" 2>/dev/null; then
+            echo "[+] MAC address on interface $IFACE successfully changed to: $MACADDRESS"
+            ip link set "$IFACE" up
+            svc wifi enable
+            exit 0
+        else
+            if [ $(($(date +%s) - $CURRENT_TIME)) -lt 10 ]; then
+                continue
+            else
+                echo "[-] Failed to change MAC address on interface $IFACE"
+                ip link set "$IFACE" up
+                svc wifi enable
+                exit 1
+            fi
+        fi
+    done
+fi

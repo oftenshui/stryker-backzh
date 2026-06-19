@@ -1,0 +1,10 @@
+REM Educational demo for Linux desktops. Opens the default terminal
+REM with Ctrl+Alt+T and types two harmless commands so you can see
+REM the keystrokes arrive in real time.
+
+DEFAULTDELAY 80
+
+CTRL ALT t
+DELAY 1500
+STRINGLN echo "Hello from StrykerOSS over USB HID"
+STRINGLN uname -a

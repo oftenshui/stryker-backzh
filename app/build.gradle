@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.zalexdev.stryker'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.zalexdev.stryker"
+        minSdk 24
+        targetSdk 28
+        versionCode 450
+        versionName "4.5R"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            def storeFilePath = project.findProperty('STRYKER_RELEASE_STORE_FILE') ?: System.getenv('STRYKER_RELEASE_STORE_FILE')
+            if (storeFilePath) {
+                storeFile file(storeFilePath)
+                storePassword project.findProperty('STRYKER_RELEASE_STORE_PASSWORD') ?: System.getenv('STRYKER_RELEASE_STORE_PASSWORD')
+                keyAlias project.findProperty('STRYKER_RELEASE_KEY_ALIAS') ?: System.getenv('STRYKER_RELEASE_KEY_ALIAS')
+                keyPassword project.findProperty('STRYKER_RELEASE_KEY_PASSWORD') ?: System.getenv('STRYKER_RELEASE_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (project.findProperty('STRYKER_RELEASE_STORE_FILE') || System.getenv('STRYKER_RELEASE_STORE_FILE')) {
+                signingConfig signingConfigs.release
+            }
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
+    aaptOptions {
+        noCompress "tar.gz", "gz", "db", "sqlite"
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    implementation 'androidx.security:security-crypto:1.0.0'
+    implementation 'androidx.work:work-runtime:2.8.1'
+
+    implementation 'com.github.cachapa:ExpandableLayout:2.9.2'
+    implementation 'com.airbnb.android:lottie:6.0.0'
+    implementation 'com.github.seancfoley:ipaddress:5.3.3'
+    implementation 'org.jsoup:jsoup:1.15.4'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+    implementation 'jcifs:jcifs:1.3.17'
+    implementation 'commons-net:commons-net:3.9.0'
+    implementation 'org.osmdroid:osmdroid-android:6.1.14'
+    implementation 'org.bouncycastle:bcpkix-jdk15on:1.70'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.3'
+    implementation 'com.nambimobile.widgets:expandable-fab:1.2.1'
+
+    implementation project(':terminal')
+}

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+  namespace 'de.mrapp.android.tabswitcher'
+  compileSdk 33
+
+  defaultConfig {
+    minSdk 24
+    targetSdk 28
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+dependencies {
+  api 'com.github.michael-rapp:android-util:1.15.0'
+  implementation 'androidx.annotation:annotation:1.2.0'
+  implementation 'androidx.appcompat:appcompat:1.6.1'
+  implementation 'androidx.appcompat:appcompat-resources:1.6.1'
+  testImplementation 'junit:junit:4.13.2'
+}

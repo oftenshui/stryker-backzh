@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialog_background_color">#2C2C2C</color>
+    <color name="stryker_accent_contrast">#1565C0</color>
+    <color name="stryker_accent">#1E88E5</color>
+    <color name="stryker_logo_accent">#FFFFFF</color>
+    <color name="yellow">#F9A825</color>
+    <color name="red">#C62828</color>
+    <color name="green">#2E7D32</color>
+    <color name="light_contrast">#121212</color>
+    <color name="night_contrast">#FFFFFF</color>
+    <color name="night_contrast_2">#D9FFFFFF</color>
+    <color name="light_lite_contrast">#303030</color>
+    <color name="grey">#BCBCBC</color>
+    <color name="local_circle">#353535</color>
+    <color name="device_img">#FFFFFF</color>
+    <color name="console">#ffffff</color>
+    <color name="itemcolor">#404040</color>
+    <color name="toolbar_color">#2d2d2d</color>
+    <color name="toolbar_darkness_color">#1e1e1e</color>
+</resources>

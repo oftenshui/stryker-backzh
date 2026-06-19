@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Stryker.CardView" parent="Widget.Material3.CardView.Filled">
+        <item name="android:backgroundTint">@color/dialog_background_color</item>
+    </style>
+
+    <style name="Widget.Stryker.Button" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Widget.Stryker.TextView" parent="android:TextAppearance.Material.Widget.TextView">
+        <item name="android:fontFamily">@font/lato</item>
+    </style>
+
+    <style name="Widget.Stryker.CustomBottomSheetStyle" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/light_contrast</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Stryker.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearance.Stryker.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">22dp</item>
+        <item name="cornerSizeTopRight">22dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="ThemeOverlay.Stryker.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Stryker.CustomBottomSheetStyle</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.55</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.Stryker.FAB" parent="Base.Widget.Material3.FloatingActionButton">
+        <item name="shapeAppearance">@null</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="Widget.Stryker.NavigationView" parent="Widget.Material3.NavigationView">
+        <item name="android:background">@color/toolbar_darkness_color</item>
+        <item name="itemIconTint">@color/menu_item</item>
+        <item name="itemTextColor">@color/menu_item</item>
+        <item name="itemShapeFillColor">@color/menu_item_shape</item>
+    </style>
+
+    <style name="Widget.Stryker.AlertDialog" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:background">@color/light_lite_contrast</item>
+        <item name="dialogCornerRadius">15dp</item>
+    </style>
+
+    <style name="Widget.Stryker.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <item name="colorOnSurface">#3F99FF</item>
+        <item name="colorSecondary">@color/stryker_accent</item>
+    </style>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_layout"
+        android:icon="@drawable/key"
+        android:title="@string/hid_layout_pick"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_capabilities"
+        android:icon="@drawable/info_outlined"
+        android:title="@string/ide_caps_title"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_save"
+        android:icon="@drawable/storage"
+        android:title="@string/hid_save_to_library"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_import"
+        android:title="@string/hid_import"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_export"
+        android:title="@string/hid_export"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_rename"
+        android:title="@string/ide_rename"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_clear"
+        android:title="@string/hid_clear"
+        app:showAsAction="never" />
+</menu>

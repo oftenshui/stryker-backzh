@@ -1,0 +1,30 @@
+<resources>
+    <style name="Theme.Stryker" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/stryker_accent</item>
+        <item name="colorPrimaryDark">?attr/colorSurface</item>
+        <item name="colorPrimaryVariant">@color/stryker_accent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/stryker_accent</item>
+        <item name="colorSecondaryVariant">@color/stryker_accent_contrast</item>
+        <item name="colorOnSecondary">@color/stryker_accent_contrast</item>
+        <item name="android:navigationBarColor">@color/toolbar_color</item>
+        <item name="android:statusBarColor">@color/toolbar_color</item>
+        <item name="switchStyle">@style/Widget.Stryker.Switch</item>
+        <item name="android:textViewStyle">@style/Widget.Stryker.TextView</item>
+        <item name="android:buttonStyle">@style/Widget.Stryker.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.Stryker.CardView</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Stryker.FAB</item>
+        <item name="materialAlertDialogTheme">@style/Widget.Stryker.AlertDialog</item>
+        <item name="backgroundColor">#1e1e1e</item>
+    </style>
+    <style name="Theme.StrykerFloatingDialog" parent="Theme.Stryker">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,22 @@
+REM Educational demo: opens Notepad and types a short note explaining
+REM what a USB HID device does. No shells, no commands — pure typing.
+REM
+REM Switches you can tweak in the IDE:
+REM   DEFAULTDELAY  pause between every Ducky line (ms)
+REM   DELAY         one-off pause
+REM   STRINGLN      types a line and presses Enter
+
+DEFAULTDELAY 60
+
+GUI r
+DELAY 700
+STRING notepad
+ENTER
+DELAY 1500
+
+STRINGLN Hi! Stryker is acting as a USB keyboard right now.
+STRINGLN The PC trusts it like any plugged-in keyboard, so every
+STRINGLN line below was "typed" by the phone over USB HID.
+STRINGLN
+STRINGLN Try editing this file in the IDE — change a STRINGLN,
+STRINGLN tweak DEFAULTDELAY, and re-run to see how it feels.

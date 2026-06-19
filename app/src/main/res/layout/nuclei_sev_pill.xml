@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sev_pill"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="4dp"
+    android:layout_weight="1"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/sev_dot"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/sev_dot_bg"
+        tools:ignore="UseAppTint" />
+
+    <TextView
+        android:id="@+id/sev_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="C 0"
+        android:textColor="@color/grey"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+</LinearLayout>

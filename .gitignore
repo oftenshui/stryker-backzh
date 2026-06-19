@@ -1,0 +1,71 @@
+# Gradle / Android
+.gradle/
+/build/
+/app/build/
+/app/release/
+/captures
+/app/captures/
+.externalNativeBuild
+.cxx/
+*.iml
+
+# Native build artifacts
+/app/src/main/obj/
+/app/src/main/libs/
+
+# Local config
+local.properties
+gradle.properties.local
+keystore.properties
+
+# Signing keys / secrets — never commit
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+google-services.json
+firebase.json
+
+# Generated lint / mapping
+/app/lint-results*
+/app/mapping*
+
+# Test artifacts
+test_results/
+*.coverage
+
+# IDE — Android Studio / IntelliJ
+.idea/*
+!.idea/.gitignore
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+!.idea/runConfigurations/
+!.idea/jarRepositories.xml
+
+# IDE — VS Code
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+*~
+
+# Misc
+*.log
+*.swp
+node_modules/
+.env
+.env.local
+
+# Personal scratch / playground
+/scratch/
+/notes/
+NOTES.md
+TODO.md
+CLAUDE.md
+.claude/

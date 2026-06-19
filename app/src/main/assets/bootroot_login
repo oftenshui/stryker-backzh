@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+### IMPORT ENVIRONMENT ###
+SELF_PATH=$(readlink -f $0)
+. ${SELF_PATH%/*}/bootroot
+
+$BUSYBOX chroot $MNT $CHROOT_EXEC -E PATH=$PATH login su

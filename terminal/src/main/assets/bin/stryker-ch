@@ -1,0 +1,46 @@
+#!/system/bin/sh
+# Version: 2.3.0
+#
+# Stryker Terminal chroot entry. Built into the main Stryker app: we reuse the
+# app's own chroot environment (bootroot_env -> BUSYBOX + MNT + validation), so
+# the session is identical to what the app uses, with the full toolset
+# (Metasploit / Nmap / Nuclei / Hydra / SearchSploit).
+#
+# We enter via `setsid -c` so the in-chroot ash becomes a session leader with a
+# controlling tty -> interactive job control (Ctrl+Z / fg / bg) works. If setsid
+# is unavailable in the rootfs we fall back to a plain `ash -l` (current
+# behaviour), so there is never a regression.
+
+STRYKER_FILES=/data/data/com.zalexdev.stryker/files
+
+# Wide Android PATH (include common su manager locations).
+export PATH=$STRYKER_FILES/usr/bin:$STRYKER_FILES/usr/sbin:/sbin:/system/bin:/system/xbin:/system/sbin:/su/bin:/magisk/.core/bin:/debug_ramdisk:/apex/com.android.runtime/bin:/apex/com.android.art/bin:/odm/bin:/vendor/bin:.
+
+clear
+
+if [ ! -e "$STRYKER_FILES/bootroot_env" ]; then
+    echo "[-] $STRYKER_FILES/bootroot_env missing."
+    echo "    Open the Stryker app once so it sets up and mounts its chroot,"
+    echo "    then reopen the terminal."
+    exit 2
+fi
+
+# Locate a working su. Do NOT depend on 'which' — it is often absent from the
+# minimal PTY environment even though su itself works (the app uses bare 'su').
+SU=
+for c in su /system/bin/su /system/xbin/su /sbin/su /debug_ramdisk/su /su/bin/su /sbin/bin/su; do
+    if command -v "$c" >/dev/null 2>&1; then SU="$c"; break; fi
+    if [ -x "$c" ]; then SU="$c"; break; fi
+done
+[ -z "$SU" ] && SU=su
+
+# As root: source the app's chroot env, then enter with a controlling tty
+# (setsid -c) when the rootfs provides setsid, else fall back to plain ash -l.
+exec "$SU" -c '
+. /data/data/com.zalexdev.stryker/files/bootroot_env
+if [ -x "$MNT/usr/bin/setsid" ] || [ -x "$MNT/bin/setsid" ]; then
+    exec "$BUSYBOX" chroot "$MNT" setsid -c /bin/ash -l
+else
+    exec "$BUSYBOX" chroot "$MNT" /bin/ash -l
+fi
+'
