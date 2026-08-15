@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wifi_monitor_failed">无法在 %1$s 上启用监听模式。\n\n可能的原因：\n• 适配器或其芯片组不支持监听模式（大多数内置非高通 Wi-Fi 芯片不支持）。\n• 未检测到适配器或已拔出。\n• 接口忙碌或已关闭，或者驱动程序以不同的名称公开该接口。\n\n解决方法：\n• 设置 → 网络接口：为握手包/解除认证选择不同的适配器。\n• 重新插入外置 USB Wi-Fi 适配器，然后重新扫描。\n• 使用支持监听模式的适配器（如 Atheros AR9271, Realtek RTL8812AU / 88XXAU）。\n• 设置 → 自定义监听命令：调整适配器启用监听模式的方式。\n• 确保 Android Wi-Fi / 热点未占用该接口 — 请将其关闭后重试。</string>
+</resources>

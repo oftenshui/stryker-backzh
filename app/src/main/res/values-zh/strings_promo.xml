@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="promo_github_title">喜欢 Stryker 吗？</string>
+    <string name="promo_github_message">Stryker 是免费且开源的。如果它对你有帮助，在 GitHub 上点个赞（Star）能帮助项目成长并触及更多人。</string>
+    <string name="promo_github_action">前往 GitHub 点赞</string>
+    <string name="promo_blog_title">保持关注</string>
+    <string name="promo_blog_message">新工具、技术文章和发布说明会首先发布在博客上。来看看接下来的更新吧。</string>
+    <string name="promo_blog_action">访问博客</string>
+    <string name="promo_later">以后再说</string>
+</resources>

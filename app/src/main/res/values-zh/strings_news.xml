@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="news_read_more">阅读更多</string>
+    <string name="news_no_app">未找到可打开此链接的应用。</string>
+</resources>
