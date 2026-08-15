@@ -1,6 +1,6 @@
 # Stryker 安装修复 & 中文汉化版
 
-[![Version](https://img.shields.io/badge/version-4.5R-blue.svg)](https://github.com/oftenshui/stryker-backzh/releases)
+[![Version](https://img.shields.io/badge/version-6.0.1-blue.svg)](https://github.com/oftenshui/stryker-backzh/releases)
 [![License](https://img.shields.io/badge/license-GPLv3-green.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/oftenshui/stryker-backzh)](https://github.com/oftenshui/stryker-backzh/stargazers)
 
